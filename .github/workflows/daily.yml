@@ -1,8 +1,8 @@
-﻿name: Daily Morning Briefing
+name: Daily Morning Briefing
 
 on:
   schedule:
-    - cron: '0 0 * * 1-5'
+    - cron: "0 0 * * 1-5"
   workflow_dispatch:
 
 permissions:
@@ -20,7 +20,7 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
+          python-version: "3.12"
 
       - name: Run briefing script
         run: python briefing.py
