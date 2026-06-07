@@ -7,7 +7,7 @@ from datetime import datetime
 
 OUTPUT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "output")
 os.makedirs(OUTPUT_DIR, exist_ok=True)
-OUTPUT_FILE = os.path.join(OUTPUT_DIR, "briefing_" + datetime.now().strftime("%Y%m%d") + ".html")
+OUTPUT_FILE = os.path.join(OUTPUT_DIR, "index.html")
 REQUEST_TIMEOUT = 10
 UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
 
