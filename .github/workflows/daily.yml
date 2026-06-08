@@ -1,4 +1,4 @@
-name: Daily Morning Briefing
+name: Hourly Morning Briefing
 
 on:
   schedule:
