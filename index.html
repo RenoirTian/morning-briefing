@@ -1,0 +1,404 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Morning Briefing - 2026-10-09</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: #0a0e17;
+    color: #c9d1d9;
+    min-height: 100vh;
+    padding: 20px;
+}
+.container { max-width: 960px; margin: 0 auto; }
+
+.header {
+    text-align: center;
+    padding: 32px 20px 24px;
+    background: linear-gradient(135deg, #0d1525 0%, #111b2e 50%, #0d1525 100%);
+    border: 1px solid #1e2d45;
+    border-radius: 16px;
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+}
+.header::before {
+    content: "";
+    position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, transparent, #00d4ff, #7b61ff, #00d4ff, transparent);
+}
+.header h1 {
+    font-size: 28px; font-weight: 700;
+    background: linear-gradient(135deg, #00d4ff, #7b61ff);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 4px;
+}
+.header .date { font-size: 14px; color: #5a6a85; letter-spacing: 1px; }
+.header .time { font-size: 12px; color: #3d4f6b; margin-top: 4px; }
+
+.section {
+    background: #0d1525;
+    border: 1px solid #1e2d45;
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 16px;
+    transition: border-color 0.3s;
+}
+.section:hover { border-color: #2a3f5f; }
+.section-title {
+    font-size: 16px; font-weight: 600; color: #00d4ff;
+    margin-bottom: 16px; display: flex; align-items: center; gap: 8px;
+}
+.section-title .icon { font-size: 18px; }
+
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; }
+.stat-card {
+    background: #111b2e; border: 1px solid #1e2d45; border-radius: 10px;
+    padding: 14px 16px; text-align: center;
+    transition: transform 0.2s, border-color 0.2s;
+}
+.stat-card:hover { transform: translateY(-2px); border-color: #2a3f5f; }
+.stat-card .label { font-size: 12px; color: #5a6a85; margin-bottom: 6px; letter-spacing: 0.5px; }
+.stat-card .value { font-size: 22px; font-weight: 700; color: #e6edf3; font-variant-numeric: tabular-nums; }
+.stat-card .change { font-size: 13px; margin-top: 4px; font-weight: 600; }
+.stat-card .sub { font-size: 11px; color: #5a6a85; margin-top: 2px; }
+
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th { text-align: left; padding: 10px 12px; color: #5a6a85; font-weight: 500; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid #1e2d45; }
+td { padding: 10px 12px; border-bottom: 1px solid #111b2e; font-variant-numeric: tabular-nums; }
+tr:hover td { background: #111b2e; }
+
+.up { color: #00d4aa; }
+.down { color: #ff4d6a; }
+
+.news-list { list-style: none; }
+.news-list li {
+    padding: 10px 0; border-bottom: 1px solid #111b2e;
+    font-size: 14px; line-height: 1.5; display: flex; gap: 10px; align-items: baseline;
+}
+.news-list li:last-child { border-bottom: none; }
+.news-list .tag {
+    display: inline-block; font-size: 10px; padding: 2px 8px; border-radius: 4px;
+    font-weight: 600; letter-spacing: 0.5px; flex-shrink: 0;
+}
+.tag-sina { background: #1a2a3d; color: #00d4ff; }
+.tag-ithome { background: #2d1a1a; color: #ff6b6b; }
+
+.news-list a {
+    color: #c9d1d9; text-decoration: none; transition: color 0.2s;
+}
+.news-list a:hover { color: #00d4ff; text-decoration: underline; }
+
+.footer { text-align: center; padding: 16px; color: #3d4f6b; font-size: 11px; margin-top: 16px; }
+
+.live-dot {
+    display: inline-block; width: 8px; height: 8px; background: #00d4aa;
+    border-radius: 50%; animation: pulse 2s infinite; margin-right: 4px;
+}
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+@media (max-width: 600px) {
+    body { padding: 12px; }
+    .header { padding: 20px 16px; }
+    .header h1 { font-size: 22px; }
+    .section { padding: 14px 16px; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    table { font-size: 12px; }
+    th, td { padding: 8px 6px; }
+}
+</style>
+</head><body><div class="container">
+<div class="header">
+<h1><span class="live-dot"></span>Morning Briefing</h1>
+<div class="date">2026-10-09 Fri (五)</div>
+<div class="time">Generated 04:09:49 HKT</div>
+</div>
+<div class="section">
+<div class="section-title"><span class="icon">&#x1f4c8;</span>A-Share Indices</div>
+<div class="stats-grid">
+<div class="stat-card"><div class="label">上证指数</div>
+<div class="value">3804.09</div>
+<div class="change down">-0.21%</div>
+<div class="sub">H 3809.60 / L 3754.14</div>
+</div>
+<div class="stat-card"><div class="label">深证成指</div>
+<div class="value">12557.01</div>
+<div class="change down">-0.51%</div>
+<div class="sub">H 12560.74 / L 12278.78</div>
+</div>
+<div class="stat-card"><div class="label">创业板指</div>
+<div class="value">3021.33</div>
+<div class="change down">-0.50%</div>
+<div class="sub">H 3022.73 / L 2932.80</div>
+</div>
+<div class="stat-card"><div class="label">科创50</div>
+<div class="value">1441.72</div>
+<div class="change down">-1.00%</div>
+<div class="sub">H 1443.94 / L 1389.99</div>
+</div>
+<div class="stat-card"><div class="label">沪深300</div>
+<div class="value">4297.25</div>
+<div class="change down">-0.30%</div>
+<div class="sub">H 4299.00 / L 4239.74</div>
+</div>
+</div></div>
+<div class="section">
+<div class="section-title"><span class="icon">&#x1f1fa;&#x1f1f8;</span>US Indices</div>
+<div class="stats-grid">
+<div class="stat-card"><div class="label">道琼斯</div>
+<div class="value">51231.64</div>
+<div class="change up">+51.77 (+0.10%)</div>
+</div>
+<div class="stat-card"><div class="label">纳斯达克</div>
+<div class="value">27193.34</div>
+<div class="change down">-345.35 (-1.25%)</div>
+</div>
+<div class="stat-card"><div class="label">标普500</div>
+<div class="value">7765.36</div>
+<div class="change down">-36.41 (-0.47%)</div>
+</div>
+</div></div>
+<div class="section">
+<div class="section-title"><span class="icon">&#x26a1;</span>Market Movers</div>
+<div style="margin-bottom:20px">
+<div style="font-size:14px;color:#00d4aa;margin-bottom:10px;font-weight:600">&#x1f680; Top Gainers</div>
+<table><thead><tr><th>Code</th><th>Name</th><th>Price</th><th>Change</th></tr></thead><tbody>
+<tr><td>bj920157</td><td>N宇特</td><td>73.740</td><td class="up">+436.29%</td></tr>
+<tr><td>bj920627</td><td>力王股份</td><td>23.170</td><td class="up">+29.95%</td></tr>
+<tr><td>sz300530</td><td>领湃科技</td><td>28.900</td><td class="up">+20.02%</td></tr>
+<tr><td>sz300821</td><td>东岳硅材</td><td>17.150</td><td class="up">+20.01%</td></tr>
+<tr><td>sz300340</td><td>科恒股份</td><td>11.100</td><td class="up">+20.00%</td></tr>
+</tbody></table></div>
+<div>
+<div style="font-size:14px;color:#ff4d6a;margin-bottom:10px;font-weight:600">&#x1f4c9; Top Losers</div>
+<table><thead><tr><th>Code</th><th>Name</th><th>Price</th><th>Change</th></tr></thead><tbody>
+<tr><td>sz300491</td><td>通合科技</td><td>27.930</td><td class="down">-13.18%</td></tr>
+<tr><td>sh688020</td><td>方邦股份</td><td>109.640</td><td class="down">-13.03%</td></tr>
+<tr><td>sz300285</td><td>国瓷材料</td><td>52.500</td><td class="down">-12.79%</td></tr>
+<tr><td>sz300931</td><td>通用电梯</td><td>16.160</td><td class="down">-12.55%</td></tr>
+<tr><td>sz301086</td><td>鸿富瀚</td><td>132.330</td><td class="down">-12.37%</td></tr>
+</tbody></table></div>
+</div>
+<div class="section">
+<div class="section-title"><span class="icon">&#x1f195;</span>New Stocks / IPO</div>
+<table><thead><tr><th>Code</th><th>Name</th><th>Price</th><th>Change</th><th>Open</th></tr></thead><tbody>
+<tr><td>sh688806</td><td>泰诺麦博</td><td>30.480</td><td class="up">+12.27%</td><td>27.420</td></tr>
+<tr><td>bj920289</td><td>华汇智能</td><td>29.950</td><td class="up">+11.59%</td><td>26.280</td></tr>
+<tr><td>sz301513</td><td>尚水智能</td><td>75.110</td><td class="up">+10.77%</td><td>65.860</td></tr>
+<tr><td>sz301449</td><td>天溯计量</td><td>45.620</td><td class="up">+6.59%</td><td>42.380</td></tr>
+<tr><td>sz301599</td><td>理奇智能</td><td>39.300</td><td class="up">+6.22%</td><td>36.530</td></tr>
+<tr><td>sz301669</td><td>高特电子</td><td>26.560</td><td class="up">+5.02%</td><td>25.000</td></tr>
+</tbody></table></div>
+<div class="section">
+<div class="section-title"><span class="icon">&#x1f4f0;</span>Finance Headlines</div>
+<ul class="news-list">
+<li><span class="tag tag-sina">Sina</span><a href="https://finance.sina.com.cn/stock/usstock/c/2026-10-09/doc-iniuqywr7877515.shtml" target="_blank" rel="noopener">PIMCO高管：10年期美债收益率有触及6%的风险</a></li>
+<li><span class="tag tag-sina">Sina</span><a href="https://finance.sina.com.cn/stock/hkstock/hkgg/2026-10-09/doc-iniuqywr7876026.shtml" target="_blank" rel="noopener">富瑞：腾讯维持“买入”评级 目标价下调至711港元</a></li>
+<li><span class="tag tag-sina">Sina</span><a href="https://finance.sina.com.cn/stock/hkstock/hkgg/2026-10-09/doc-iniuqywq1103403.shtml" target="_blank" rel="noopener">中金：阿里巴巴-W维持“跑赢行业”评级 目标价172港元</a></li>
+<li><span class="tag tag-sina">Sina</span><a href="https://finance.sina.com.cn/stock/hkstock/hkgg/2026-10-09/doc-iniuqywq1103378.shtml" target="_blank" rel="noopener">里昂：宁德时代维持“跑赢大市”评级 目标价下调至670港元</a></li>
+<li><span class="tag tag-sina">Sina</span><a href="https://finance.sina.com.cn/stock/usstock/c/2026-10-09/doc-iniuqywr7872195.shtml" target="_blank" rel="noopener">日本10年期国债收益率跌5.5个基点至3.025%</a></li>
+<li><span class="tag tag-sina">Sina</span><a href="https://finance.sina.com.cn/stock/hkstock/marketalerts/2026-10-09/doc-iniuqywm3017216.shtml" target="_blank" rel="noopener">港股午评：恒指涨1.09% 科指涨1.55% 科网股普涨 汽车股集体上涨 锂电池板块拉升 宁德时代涨超4%</a></li>
+<li><span class="tag tag-sina">Sina</span><a href="https://finance.sina.com.cn/stock/usstock/c/2026-10-09/doc-iniuqywm6970656.shtml" target="_blank" rel="noopener">交易员：印度央行继续抛售美元以支撑卢比汇率</a></li>
+<li><span class="tag tag-sina">Sina</span><a href="https://finance.sina.com.cn/stock/usstock/c/2026-10-09/doc-iniuqywm6970352.shtml" target="_blank" rel="noopener">飓风伊赛亚斯逼近美国墨西哥湾，原油产量大幅锐减</a></li>
+</ul></div>
+<div class="section">
+<div class="section-title"><span class="icon">&#x1f4bb;</span>Tech News</div>
+<ul class="news-list">
+<li><span class="tag tag-ithome">ITHome</span><a href="https://www.ithome.com/1/010/872.htm" target="_blank" rel="noopener">消息称 OPPO 阔直板工程机是标准 16:9：LIPO 极窄四等边设计，目测边框 1mm±</a></li>
+<li><span class="tag tag-ithome">ITHome</span><a href="https://www.ithome.com/1/010/868.htm" target="_blank" rel="noopener">Counterpoint 预测：笔电 OLED 面板出货近两年将分别增长 50% 和 24%</a></li>
+<li><span class="tag tag-ithome">ITHome</span><a href="https://www.ithome.com/1/010/860.htm" target="_blank" rel="noopener">央视曝光锂电池代加工骗局：号称在家月入过万，但一分加工费都拿不到</a></li>
+<li><span class="tag tag-ithome">ITHome</span><a href="https://www.ithome.com/1/010/859.htm" target="_blank" rel="noopener">G3033 奎独库高速关键控制性隧道主体施工启动，全线建成后天山南北将实现全年全天候通行</a></li>
+<li><span class="tag tag-ithome">ITHome</span><a href="https://www.ithome.com/1/010/858.htm" target="_blank" rel="noopener">小米集团盘中股价最高涨超 9%，澎程首月锁单超 7 万台</a></li>
+<li><span class="tag tag-ithome">ITHome</span><a href="https://www.ithome.com/1/010/857.htm" target="_blank" rel="noopener">小米米家石墨烯暖风机 Pro 开售：2 米送暖半径、80° 广角摆风，399 元</a></li>
+</ul></div>
+<button class="refresh-btn" id="refreshBtn" title="Refresh data"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg></button>
+<div class="toast" id="toast"></div>
+<script>(function() {
+    var btn = document.getElementById("refreshBtn");
+    var toast = document.getElementById("toast");
+    var tt = null;
+    function st(msg, type) {
+        toast.textContent = msg;
+        toast.className = "toast " + (type || "") + " show";
+        if (tt) clearTimeout(tt);
+        tt = setTimeout(function() { toast.className = "toast"; }, 2500);
+    }
+    function fn(n, d) { d = d || 2; return (typeof n === "number") ? n.toFixed(d) : String(n); }
+    function fc(v, pct) {
+        var n = parseFloat(v);
+        if (isNaN(n)) return String(v);
+        var s = n > 0 ? "+" : "";
+        return s + (pct !== false ? n.toFixed(2) + "%" : n.toFixed(2));
+    }
+    function cc(v) { var n = parseFloat(v); return isNaN(n) ? "" : n > 0 ? "up" : n < 0 ? "down" : ""; }
+
+    async function fetchAIndices() {
+        var codes = {"sh000001":"SH","sz399001":"SZ","sz399006":"CYB","sh000688":"KC50","sh000300":"HS300"};
+        var r = await fetch("https://hq.sinajs.cn/list=" + Object.keys(codes).join(","), {headers:{"Referer":"https://finance.sina.com.cn/"}});
+        var t = await r.text(), res = [];
+        for (var c in codes) {
+            var re = new RegExp('var hq_str_' + c + '="([^"]+)"');
+            var m = t.match(re);
+            if (!m) continue;
+            var p = m[1].split(",");
+            if (p.length < 6) continue;
+            var pr = parseFloat(p[1]) || 0, pv = parseFloat(p[2]) || 0;
+            res.push({name:p[0], price:pr, change:pr-pv, changePct:pv?(pr-pv)/pv*100:0, high:parseFloat(p[4])||0, low:parseFloat(p[5])||0});
+        }
+        return res;
+    }
+    async function fetchUSIndices() {
+        var codes = {"gb_dji":"DJI","gb_ixic":"IXIC","gb_inx":"SPX"};
+        var r = await fetch("https://hq.sinajs.cn/list=" + Object.keys(codes).join(","), {headers:{"Referer":"https://finance.sina.com.cn/"}});
+        var t = await r.text(), res = [];
+        for (var c in codes) {
+            var re = new RegExp('var hq_str_' + c + '="([^"]+)"');
+            var m = t.match(re);
+            if (!m) continue;
+            var p = m[1].split(",");
+            if (p.length < 5) continue;
+            res.push({name:p[0], price:parseFloat(p[1])||0, change:parseFloat(p[4])||0, changePct:parseFloat(p[2])||0});
+        }
+        return res;
+    }
+    async function fetchMovers(asc, cnt) {
+        var r = await fetch("https://vip.stock.finance.sina.com.cn/quotes_service/api/json_v2.php/Market_Center.getHQNodeData?page=1&num="+(cnt+5)+"&sort=changepercent&asc="+(asc?"1":"0")+"&node=hs_a");
+        var d = await r.json(), res = [];
+        for (var i = 0; i < d.length && res.length < cnt; i++) {
+            var pct = parseFloat(d[i].changepercent) || 0;
+            if (!asc && pct <= 0) continue;
+            if (asc && pct >= 0) continue;
+            res.push({code:d[i].symbol, name:d[i].name, price:d[i].trade||d[i].price, changePct:pct});
+        }
+        return res;
+    }
+    async function fetchFinanceNews() {
+        var r = await fetch("https://feed.mix.sina.com.cn/api/roll/get?pageid=153&lid=2509&k=&num=8&page=1&_="+Date.now(), {headers:{"Referer":"https://finance.sina.com.cn/"}});
+        var d = await r.json(), items = [];
+        var ls = d.result && d.result.data ? d.result.data : [];
+        for (var i = 0; i < ls.length && i < 8; i++) {
+            var t = (ls[i].title || "").trim();
+            if (t) items.push({title:t, url:ls[i].url||"", source:"Sina"});
+        }
+        return items;
+    }
+    async function fetchTechNews() {
+        var r = await fetch("https://api.ithome.com/json/newslist/news?page=1");
+        var d = await r.json(), items = [];
+        var adw = ["清仓","元官方","到手","仅售","秒杀","立减","大促","神价"];
+        var ls = d.newslist || [];
+        for (var i = 0; i < ls.length && items.length < 6; i++) {
+            var t = ls[i].title || "";
+            if (adw.some(function(w){ return t.indexOf(w)>=0; })) continue;
+            var au = ls[i].url || "";
+            if (au.indexOf("lapin") >= 0) continue;
+            var url = "", nid = String(ls[i].newsid||"");
+            if (au && au.charAt(0) === "/") url = "https://www.ithome.com" + au;
+            else if (nid.length >= 6) url = "https://www.ithome.com/0/" + nid.substring(0,3) + "/" + nid.substring(3) + ".htm";
+            if (t) items.push({title:t, url:url, source:"ITHome"});
+        }
+        return items;
+    }
+    function updateAIndices(d) {
+        var g = document.querySelector(".section:nth-of-type(1) .stats-grid");
+        if (!g || !d.length) return;
+        var h = "";
+        for (var i = 0; i < d.length; i++) {
+            var x = d[i], cl = cc(x.changePct);
+            h += '<div class="stat-card"><div class="label">'+x.name+'</div><div class="value">'+fn(x.price)+'</div><div class="change '+cl+'">'+fc(x.changePct)+'</div>';
+            if (x.high) h += '<div class="sub">H '+fn(x.high)+' / L '+fn(x.low)+'</div>';
+            h += '</div>';
+        }
+        g.innerHTML = h;
+    }
+    function updateUSIndices(d) {
+        var g = document.querySelector(".section:nth-of-type(2) .stats-grid");
+        if (!g || !d.length) return;
+        var h = "";
+        for (var i = 0; i < d.length; i++) {
+            var x = d[i], cl = cc(x.changePct);
+            h += '<div class="stat-card"><div class="label">'+x.name+'</div><div class="value">'+fn(x.price)+'</div><div class="change '+cl+'">'+fc(x.change,false)+' ('+fc(x.changePct)+')</div></div>';
+        }
+        g.innerHTML = h;
+    }
+    function updateMovers(ga, lo) {
+        var tbs = document.querySelectorAll(".section:nth-of-type(3) table");
+        if (ga && ga.length && tbs.length >= 1) {
+            var h = "";
+            for (var i = 0; i < ga.length; i++) {
+                var s = ga[i];
+                h += '<tr><td>'+s.code+'</td><td>'+s.name+'</td><td>'+fn(s.price)+'</td><td class="up">'+fc(s.changePct)+'</td></tr>';
+            }
+            tbs[0].querySelector("tbody").innerHTML = h;
+        }
+        if (lo && lo.length && tbs.length >= 2) {
+            var h = "";
+            for (var i = 0; i < lo.length; i++) {
+                var s = lo[i];
+                h += '<tr><td>'+s.code+'</td><td>'+s.name+'</td><td>'+fn(s.price)+'</td><td class="down">'+fc(s.changePct)+'</td></tr>';
+            }
+            tbs[1].querySelector("tbody").innerHTML = h;
+        }
+    }
+    function updateNews(fin, tec) {
+        var ls = document.querySelectorAll(".news-list");
+        if (fin && fin.length && ls.length >= 1) {
+            var h = "";
+            for (var i = 0; i < fin.length; i++) {
+                var it = fin[i];
+                var ti = it.url ? '<a href="'+it.url+'" target="_blank" rel="noopener">'+it.title+'</a>' : it.title;
+                h += '<li><span class="tag tag-sina">'+it.source+'</span>'+ti+'</li>';
+            }
+            ls[0].innerHTML = h;
+        }
+        if (tec && tec.length && ls.length >= 2) {
+            var h = "";
+            for (var i = 0; i < tec.length; i++) {
+                var it = tec[i];
+                var ti = it.url ? '<a href="'+it.url+'" target="_blank" rel="noopener">'+it.title+'</a>' : it.title;
+                h += '<li><span class="tag tag-ithome">'+it.source+'</span>'+ti+'</li>';
+            }
+            ls[1].innerHTML = h;
+        }
+    }
+    function updateNewStocks() {
+        fetch("https://vip.stock.finance.sina.com.cn/quotes_service/api/json_v2.php/Market_Center.getHQNodeData?page=1&num=10&sort=changepercent&asc=0&node=new_stock")
+            .then(function(r) { return r.json(); })
+            .then(function(d) {
+                var tb = document.querySelector(".section:nth-of-type(4) table tbody");
+                if (!tb || !d.length) return;
+                var h = "";
+                for (var i = 0; i < Math.min(6, d.length); i++) {
+                    var s = d[i], cl = cc(s.changepercent);
+                    h += '<tr><td>'+s.symbol+'</td><td>'+s.name+'</td><td>'+fn(s.trade)+'</td><td class="'+cl+'">'+fc(s.changepercent)+'</td><td>'+fn(s.open)+'</td></tr>';
+                }
+                tb.innerHTML = h;
+            });
+    }
+    function updateTime() {
+        var now = new Date();
+        var el = document.querySelector(".header .time");
+        if (el) el.textContent = "Refreshed " + now.toTimeString().substring(0,8) + " HKT";
+    }
+
+    btn.addEventListener("click", async function() {
+        btn.classList.add("spinning");
+        btn.classList.remove("success", "error");
+        var ok = 0, total = 5;
+        try { var a = await fetchAIndices(); updateAIndices(a); ok++; } catch(e) { console.log(e); }
+        try { var u = await fetchUSIndices(); updateUSIndices(u); ok++; } catch(e) { console.log(e); }
+        try { var g = await fetchMovers(false,5); var l = await fetchMovers(true,5); updateMovers(g,l); ok++; } catch(e) { console.log(e); }
+        try { var fn = await fetchFinanceNews(); var tn = await fetchTechNews(); updateNews(fn,tn); ok++; } catch(e) { console.log(e); }
+        try { updateNewStocks(); ok++; } catch(e) { console.log(e); }
+        updateTime();
+        btn.classList.remove("spinning");
+        if (ok >= 4) { btn.classList.add("success"); st("Refreshed ("+ok+"/"+total+")", "ok"); }
+        else if (ok >= 2) { st("Partial ("+ok+"/"+total+")", "ok"); }
+        else { btn.classList.add("error"); st("Network error, retry", "err"); }
+        setTimeout(function() { btn.classList.remove("success","error"); }, 3000);
+    });
+})();</script>
+<div class="footer">Auto-generated by Morning Briefing &middot; For reference only &middot; Not investment advice</div>
+</div></body></html>
